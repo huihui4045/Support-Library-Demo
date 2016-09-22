@@ -16,7 +16,33 @@ import android.view.ViewGroup;
  * Description  :
  */
 public class InfoDetailsFragment extends Fragment {
+
+
     private RecyclerView mRecyclerView;
+
+    private int page=0;
+
+    private int[] colors0 = {R.color.color_0, R.color.color_1, R.color.color_2, R.color.color_3,
+            R.color.color_4, R.color.color_5};
+
+    private int[] colors1 = {R.color.color_0, R.color.color_1, R.color.color_2, R.color.color_3,
+            R.color.color_4, R.color.color_5, R.color.color_6, R.color.color_7,
+            R.color.color_8, R.color.color_9,};
+
+    private int[] colors2= {R.color.color_0, R.color.color_1, R.color.color_2, R.color.color_3,
+            R.color.color_4, R.color.color_5, R.color.color_6, R.color.color_7,
+            R.color.color_8, R.color.color_9,R.color.color_0, R.color.color_1, R.color.color_2, R.color.color_3,
+            R.color.color_4, R.color.color_5};
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (getArguments()!=null){
+
+            page= getArguments().getInt("data");
+        }
+    }
 
     @Nullable
     @Override
@@ -30,6 +56,25 @@ public class InfoDetailsFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
-        mRecyclerView.setAdapter(new RecyclerViewAdapter(getActivity()));
+
+
+        if (page==0){
+
+            mRecyclerView.setAdapter(new RecyclerViewAdapter(getActivity(),colors0));
+        }
+
+        if (page==1){
+
+            mRecyclerView.setAdapter(new RecyclerViewAdapter(getActivity(),colors1));
+        }
+
+        if (page==2){
+
+            mRecyclerView.setAdapter(new RecyclerViewAdapter(getActivity(),colors2));
+        }
+
+
+
+
     }
 }

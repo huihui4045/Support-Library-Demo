@@ -21,8 +21,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context mContext;
 
+    public RecyclerViewAdapter(Context mContext,int [] colors) {
+        this.mContext = mContext;
+        this.colors=colors;
+    }
+
     public RecyclerViewAdapter(Context mContext) {
         this.mContext = mContext;
+
     }
 
     @Override
