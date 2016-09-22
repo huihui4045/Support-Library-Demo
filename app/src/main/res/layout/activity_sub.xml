@@ -35,7 +35,13 @@
                 android:id="@+id/tool_bar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin" />
+                app:title=""
+                >
+
+
+            </android.support.v7.widget.Toolbar>
+
+
 
         </android.support.design.widget.CollapsingToolbarLayout>
 

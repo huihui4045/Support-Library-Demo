@@ -29,6 +29,7 @@ public class SubActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sub);
 
         Toolbar toolbar = (Toolbar) this.findViewById(R.id.tool_bar);
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeAsUpIndicator(android.R.drawable.ic_input_delete);
@@ -36,7 +37,7 @@ public class SubActivity extends AppCompatActivity {
 
         CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        collapsingToolbar.setTitle("详情界面");
+        collapsingToolbar.setTitle("");
 
         mTabLayout = (TabLayout) this.findViewById(R.id.tab_layout);
         mViewPager = (ViewPager) this.findViewById(R.id.view_pager);
@@ -55,15 +56,15 @@ public class SubActivity extends AppCompatActivity {
         InfoDetailsFragment object2 = new InfoDetailsFragment();
         InfoDetailsFragment object3 = new InfoDetailsFragment();
         Bundle args1 = new Bundle();
-        args1.putInt("data",0);
+        args1.putInt("data", 0);
         object1.setArguments(args1);
 
         Bundle args2 = new Bundle();
-        args2.putInt("data",1);
+        args2.putInt("data", 1);
         object2.setArguments(args2);
 
         Bundle args3 = new Bundle();
-        args3.putInt("data",2);
+        args3.putInt("data", 2);
         object3.setArguments(args3);
 
         fragments.add(object1);
